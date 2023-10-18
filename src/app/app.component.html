@@ -1,18 +1,22 @@
+{{200 | currency:'INR'}}
+
 <form class="container" #loginForm="ngForm">
-    <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" name="name" value="{{inputValue.name}}" ngModel></textarea>
-    </div>
+  <div class="mb-3">
+    <label for="a1" class="form-label">Example textarea</label>
+    <textarea class="form-control" id="a1" [(ngModel)]="inputValue" rows="5" name="name"></textarea>
+  </div>
+  <p>Uppercase: {{ inputValue | uppercase }}</p>
+  <p>Lowercase: {{ inputValue | lowercase }}</p>
+</form>
+
+
+<input type="text" name="iii" [(ngModel)]="nameSearch">
 
 
 
-    <button type="submit" class="btn btn-primary" (click)="transform(loginForm.value)" >uppercase</button>
- 
-<!-- <p>{{inputValue.name | uppercase}}</p> -->
+<p *ngFor="let pro of proname | app : nameSearch">{{proname.name}}</p>
 
 
 
 
-  </form>
- 
 <router-outlet></router-outlet>
