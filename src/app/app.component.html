@@ -10,13 +10,12 @@
 </form>
 
 
-<input type="text" name="iii" [(ngModel)]="nameSearch">
+<!-- <input type="text" name="iii" [(ngModel)]="nameSearch">
+<p *ngFor="let pro of proname | app : nameSearch">{{proname.name}}</p> -->
 
 
+<input type="text" name="iii" [(ngModel)]="nameSearch"> 
+<p *ngFor="let pro of proname | app : nameSearch">{{pro.name}}</p>
 
-<p *ngFor="let pro of proname | app : nameSearch">{{proname.name}}</p>
-
-
-
-
+ 
 <router-outlet></router-outlet>
