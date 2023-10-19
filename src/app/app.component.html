@@ -9,13 +9,40 @@
   <p>Lowercase: {{ inputValue | lowercase }}</p>
 </form>
 
-
-<!-- <input type="text" name="iii" [(ngModel)]="nameSearch">
-<p *ngFor="let pro of proname | app : nameSearch">{{proname.name}}</p> -->
-
-
-<input type="text" name="iii" [(ngModel)]="nameSearch"> 
-<p *ngFor="let pro of proname | app : nameSearch">{{pro.name}}</p>
+<div class="container mt-5">
+  <div class="d-flex mb-5">
+    <input type="text" class="form-control" [(ngModel)]="nameSearch" name="iii"  placeholder="value">  
+  <select class="form-select" aria-label="Default select" [(ngModel)]="selectSearch" name="aaa"> 
+    <option value="name">name</option>
+    <option value="age">age</option>
+    <option value="gender">gender</option>
+    <option value="hsc">hsc</option>
+  </select>
+  </div>
+   
+  <table>
+    <thead>
+      <tr>
+        <th>name</th>
+        <th>age</th>
+        <th>hsc</th>
+        <th>gender</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pro of proname | app: nameSearch: selectSearch">
+        <td>{{pro.name}}</td>
+        <td>{{pro.age}}</td>
+        <td>{{pro.Hsc}}</td>
+        <td>{{pro.gender}}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+</div>
 
  
-<router-outlet></router-outlet>
+
+<!-- <router-outlet></router-outlet> -->
+
+ 
